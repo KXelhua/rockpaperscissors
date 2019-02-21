@@ -5,6 +5,7 @@
 //GLOBAL VARIABLES
 /* global $ */
 
+    
 var userChoice="";
 var computerChoice="";
 var winner="";
@@ -16,12 +17,10 @@ $(document).ready(function(){
     $("#userChoice").text($("#input").val());
     userChoice=$("#input").val();
         $("#userChoice").text(userChoice);
-    randomNumber=Math.Floor(Math.random())*3;
-    computerChoice=$(Math.Floor(Math.random())*3).val();
-        $("#computerChoice").text(computerChoice);
+    randomNumber=Math.floor(Math.random()*3);
+    $("#computerChoice").text(computerChoice);
     if (randomNumber===0){
         computerChoice="rock";
-        $("#computerChoice").text(computerChoice);
     } else if (randomNumber===1) {
         computerChoice="paper";
         $("#computerChoice").text(computerChoice);
@@ -29,6 +28,18 @@ $(document).ready(function(){
         computerChoice="scissors";
         $("#computerChoice").text(computerChoice);
     }
+   
+   if (computerChoice==="rock" && userChoice==="scissors" || computerChoice==="paper" && userChoice==="rock" || computerChoice==="scissors" && userChoice==="paper"){
+        $("#result").text("Computer Beats User!");
+    } else if (userChoice==="rock" && computerChoice==="scissors" || userChoice==="paper" && computerChoice==="rock" || computerChoice==="paper" && userChoice==="scissors" ){
+         $("#result").text("User Beats Computer"); 
+    } else {
+        $("#result").text("It's a tie!"); 
+    } 
+ 
+ var input = document.getElementById("input1");
+    input.value == ""
+    
 });
 });
 
